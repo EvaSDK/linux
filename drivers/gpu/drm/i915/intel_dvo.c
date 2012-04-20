@@ -35,6 +35,7 @@
 #include "dvo.h"
 
 #define SIL164_ADDR	0x38
+#define NS2501_ADDR	0x38
 #define CH7xxx_ADDR	0x76
 #define TFP410_ADDR	0x38
 
@@ -45,6 +46,13 @@ static const struct intel_dvo_device intel_dvo_devices[] = {
 		.dvo_reg = DVOC,
 		.slave_addr = SIL164_ADDR,
 		.dev_ops = &sil164_ops,
+	},
+	{
+		.type = INTEL_DVO_CHIP_TMDS,
+		.name = "ns2501",
+		.dvo_reg = DVOC,
+		.slave_addr = NS2501_ADDR,
+		.dev_ops = &ns2501_ops,
 	},
 	{
 		.type = INTEL_DVO_CHIP_TMDS,
